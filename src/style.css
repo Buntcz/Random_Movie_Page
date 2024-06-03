@@ -24,8 +24,29 @@ body {
 .content {
    display: flex;
    flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 .CTA {
     font-size: 1.3rem;
+}
+
+.random {
+    width: 30%;
+    background-color: #D2042D;
+    border: 2px solid black;
+    font-size: 1.2rem;
+    border-radius: 15%;
+    font-weight: 200;
+}
+
+
+.question1,
+.question2{
+ -webkit-text-stroke: #D2042D 1px;
+}
+
+.CTA {
+    -webkit-text-stroke:#D2042D 0.5px ;
 }
