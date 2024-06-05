@@ -1,7 +1,11 @@
-const page = document.querySelector(".content");
+const content = document.querySelector(".content");
 
-function emptyPage() {
-    page.innerHTML = ""
+function emptyAndCreate() {
+    content.innerHTML = ""
+    const newPage = document.createElement("div");
+    newPage.classList.add("newPage")
+
+    content.appendChild(newPage);
 }
 
-export {emptyPage}
+export {emptyAndCreate}
