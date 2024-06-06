@@ -346,6 +346,13 @@ body {
    align-items: center;
 }
 
+.content1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .CTA {
     font-size: 1.3rem;
 }
@@ -373,7 +380,7 @@ body {
     width: 900px;
     height: 700px;
     border: 1px solid white;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
 }
@@ -392,6 +399,11 @@ body {
     grid-row-start: 1;
     grid-row-end: 2;
     border: 1px solid white;
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .description {
@@ -400,12 +412,23 @@ body {
     grid-row-start: 2;
     grid-row-end: 3;
     border: 1px solid white;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2rem;
 }
 
 .plot {
     grid-column: 2/3;
     grid-row: 3/4;
     border: 1px solid white;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -560,16 +583,15 @@ module.exports = __webpack_require__.p + "5a9f2f78cdaa594a05d7.jpg";
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   emptyAndCreate: () => (/* binding */ emptyAndCreate)
+/* harmony export */   emptyAndShow: () => (/* binding */ emptyAndShow)
 /* harmony export */ });
-const content = document.querySelector(".content");
+const content = document.querySelector(".content1");
+const page = document.querySelector(".newPage")
 
-function emptyAndCreate() {
+
+function emptyAndShow() {
     content.innerHTML = ""
-    const newPage = document.createElement("div");
-    newPage.classList.add("newPage")
-
-    content.appendChild(newPage);
+    page.style.display = 'grid';
 }
 
 
@@ -580,41 +602,9 @@ function emptyAndCreate() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   createNewPage: () => (/* binding */ createNewPage)
-/* harmony export */ });
-function createNewPage() {
-    const newPage = document.querySelector(".newPage")
-
-    const posterSpace = document.createElement("div");
-    posterSpace.classList.add("poster")
-
-    const nameSpace = document.createElement("div");
-    nameSpace.classList.add("title")
-
-    const descriptionSpace = document.createElement("div");
-    descriptionSpace.classList.add("description")
-
-    const plotSpace = document.createElement("div");
-    plotSpace.classList.add("plot")
-    
-    newPage.appendChild(posterSpace)
-    newPage.appendChild(nameSpace);
-    newPage.appendChild(descriptionSpace);
-    newPage.appendChild(plotSpace);
-   
-}
-
-
-
-/***/ }),
-/* 16 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   generateMovie: () => (/* binding */ generateMovie)
 /* harmony export */ });
-/* harmony import */ var _apiKey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
+/* harmony import */ var _apiKey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
 
 
 const title = document.querySelector(".title");
@@ -625,15 +615,16 @@ async function generateMovie() {
     let response = await fetch(`http://www.omdbapi.com/?apikey=${_apiKey__WEBPACK_IMPORTED_MODULE_0__.apiKey}&i=tt0050083`)
     let movie = await response.json();
     
-    title.textContent = `${movie.Title}`;
-
-    console.log(movie);
+    title.textContent = `Title: ${movie.Title}`;
+    description.textContent = `${movie.Plot}`
+    plot.textContent = `Genre: ${movie.Genre}`
+    console.log(movie)
 }
 
 
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -788,9 +779,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _emptyPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
-/* harmony import */ var _createNewPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15);
-/* harmony import */ var _movieGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-
+/* harmony import */ var _movieGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15);
 
 
 
@@ -798,9 +787,8 @@ __webpack_require__.r(__webpack_exports__);
 const button = document.querySelector(".random")
 
 button.addEventListener("click", () => {
-    ;(0,_emptyPage__WEBPACK_IMPORTED_MODULE_1__.emptyAndCreate)()
-    ;(0,_createNewPage__WEBPACK_IMPORTED_MODULE_2__.createNewPage)();
-    (0,_movieGenerator__WEBPACK_IMPORTED_MODULE_3__.generateMovie)();
+    ;(0,_emptyPage__WEBPACK_IMPORTED_MODULE_1__.emptyAndShow)()
+    ;(0,_movieGenerator__WEBPACK_IMPORTED_MODULE_2__.generateMovie)()
 });
 
 

@@ -1,11 +1,10 @@
-const content = document.querySelector(".content");
+const content = document.querySelector(".content1");
+const page = document.querySelector(".newPage")
 
-function emptyAndCreate() {
+
+function emptyAndShow() {
     content.innerHTML = ""
-    const newPage = document.createElement("div");
-    newPage.classList.add("newPage")
-
-    content.appendChild(newPage);
+    page.style.display = 'grid';
 }
 
-export {emptyAndCreate}
+export {emptyAndShow}

@@ -1,13 +1,11 @@
 import './style.css'
-import { emptyAndCreate } from './emptyPage'
-import { createNewPage } from './createNewPage';
+import { emptyAndShow } from './emptyPage'
 import { generateMovie } from './movieGenerator';
 
 const button = document.querySelector(".random")
 
 button.addEventListener("click", () => {
-    emptyAndCreate()
-    createNewPage();
-    generateMovie();
+    emptyAndShow()
+    generateMovie()
 });
 
