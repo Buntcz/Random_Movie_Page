@@ -19,6 +19,7 @@ body {
 .CTA,
 .random {
     font-family: "pageFont";
+    transition: all ease-out 1s;
 }
 
 .content {
@@ -58,11 +59,19 @@ body {
     -webkit-text-stroke:#D2042D 0.5px ;
 }
 
+.content2 {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .newPage {
     width: 900px;
     height: 700px;
-    border: 1px solid white;
-    display: none;
+    border: 2px solid #D2042D;
+    border-radius: 15%;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
 }
@@ -72,7 +81,10 @@ body {
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 4;
-    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    border-right: 2px solid #D2042D;
+    align-items: center;
 }
 
 .title {
@@ -80,11 +92,12 @@ body {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
-    border: 1px solid white;
     font-size: 2rem;
-    color: white;
+    color: #D2042D;
     display: flex;
     justify-content: center;
+    border-bottom: 2px solid #D2042D;
+    border-left: 2px solid #D2042D;
     align-items: center;
 }
 
@@ -93,22 +106,28 @@ body {
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
-    border: 1px solid white;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     display: flex;
+    border-bottom: 2px solid #D2042D;
+    border-left: 2px solid #D2042D;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #D2042D;
     padding: 2rem;
 }
 
 .plot {
     grid-column: 2/3;
     grid-row: 3/4;
-    border: 1px solid white;
     font-size: 1.7rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #D2042D;
+    border-left: 2px solid #D2042D;
+}
+
+a {
+    font-weight: light;
+    color: #D2042D;
 }
